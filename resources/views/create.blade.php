@@ -2,6 +2,11 @@
     <x-slot name="Titolo">
         New Books
     </x-slot>
+    <x-slot name="css">
+        <style>
+
+        </style>
+    </x-slot>
     <div class="container mt-5">
         <h1 class="mb-4 text-center">Nuovi libri</h1>
         @if ($errors->any())
@@ -13,7 +18,12 @@
                 </ul>
             </div>
         @endif
-        <form method="POST" action="/salva">
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+        <form method="POST" action="{{ route('store') }}">
             @csrf
             <div class="mb-3">
                 <label for="exampleFormInput3" class="form-label">Nome del libro</label>

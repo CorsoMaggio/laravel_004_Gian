@@ -20,11 +20,16 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'pages' => ['required','integer']
+        ]);
+
         Book::create([
             'name' => $request->name,
             'year' => $request->year,
             'pages' => $request->pages
         ]);
-        dd('ok');
+        return redirect()->route('create')->with('success','Operazione compiuta! Il libro è stato aggiunto.');
     }
 }
