@@ -9,9 +9,8 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <style>
-        {{ $css ?? '' }}
-    </style>
+    {{ $css ?? '' }}
+
 </head>
 
 <body>

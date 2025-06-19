@@ -4,8 +4,11 @@
     </x-slot>
     <x-slot name="css">
         <style>
-            .navbar-brand,
             .nav-link {
+                color: white !important;
+            }
+
+            .navbar-brand {
                 color: white !important;
             }
 
@@ -35,7 +38,7 @@
             <div class="mb-3">
                 <label for="exampleFormInput3" class="form-label">Nome del libro</label>
                 <input type="text" class="form-control" id="exampleFormInput3" name="name"
-                    placeholder="Inserisci il tuo nome">
+                    placeholder="Inserisci nome del libro">
                 @error('name')
                     {{ $message }}
                 @enderror
