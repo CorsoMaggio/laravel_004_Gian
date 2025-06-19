@@ -4,7 +4,14 @@
     </x-slot>
     <x-slot name="css">
         <style>
+            .navbar-brand,
+            .nav-link {
+                color: white !important;
+            }
 
+            .bg-dark {
+                background-color: #343a40 !important;
+            }
         </style>
     </x-slot>
     <div class="container mt-5">

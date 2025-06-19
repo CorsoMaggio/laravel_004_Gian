@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Library</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"

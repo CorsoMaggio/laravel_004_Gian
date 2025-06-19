@@ -2,6 +2,18 @@
     <x-slot name="Titolo">
         Books LIST
     </x-slot>
+    <x-slot name="css">
+        <style>
+            .navbar-brand,
+            .nav-link {
+                color: white !important;
+            }
+
+            .bg-dark {
+                background-color: #343a40 !important;
+            }
+        </style>
+    </x-slot>
     <h1>Lista dei libri</h1>
     <div class="container mt-5">
         <div class="row">
