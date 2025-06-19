@@ -32,4 +32,10 @@ class BookController extends Controller
         ]);
         return redirect()->route('create')->with('success','Operazione compiuta! Il libro è stato aggiunto.');
     }
+
+    
+    public function show(Book $book)
+    {
+        return view('show', compact('book'));
+    }
 }

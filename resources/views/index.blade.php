@@ -29,10 +29,11 @@
                 <div class="col-md-4 mb-4">
                     <div class="card" style="background-color: #80808090">
                         <div class="card-body">
-                            <p class="card-title"><strong>ID:</strong> {{ $book->id }}</p>
-                            <p class="card-text"><strong>Nome del libro:</strong> {{ $book->name }}</p>
-                            <p class="card-text"><strong>N. di pagine:</strong> {{ $book->pages }}</p>
-                            <p class="card-text"><strong>Anno di uscita:</strong> {{ $book->year }}</p>
+                            <p class="card-title"><strong>ID:</strong> {{ $book->id }} </p>
+                            <p class="card-text"><strong>Nome del libro:</strong> {{ $book->name }} </p>
+                            <p class="card-text"><strong>N. di pagine:</strong> {{ $book->pages }} </p>
+                            <p class="card-text"><strong>Anno di uscita:</strong> {{ $book->year }} <a
+                                    href="{{ route('show', ['book' => $book]) }}">Vedi Dettagli</a></p>
                         </div>
                     </div>
                 </div>
