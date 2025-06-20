@@ -28,13 +28,10 @@
                 </ul>
             </div>
         @endif
-        @if (session('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
+
         <form method="POST" action="{{ route('store') }}">
             @csrf
+            @method('POST')
             <div class="mb-3">
                 <label for="exampleFormInput3" class="form-label">Nome del libro</label>
                 <input type="text" class="form-control" id="exampleFormInput3" name="name"

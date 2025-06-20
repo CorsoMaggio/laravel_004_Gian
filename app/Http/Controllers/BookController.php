@@ -30,12 +30,42 @@ class BookController extends Controller
             'year' => $request->year,
             'pages' => $request->pages
         ]);
-        return redirect()->route('create')->with('success','Operazione compiuta! Il libro è stato aggiunto.');
+        return redirect()->route('index')->with('success','Operazione compiuta! Il libro è stato aggiunto.');
     }
 
     
     public function show(Book $book)
     {
         return view('show', compact('book'));
+    }
+
+    public function edit(Book $book)
+    {
+        return view('edit', compact('book'));
+    }
+
+    public function update(Request $request, Book $book)
+    {
+        $request->validate([
+            'name' => 'required',
+            'pages' => ['required','integer']
+        ]);
+
+        $book->update([
+            'name' => $request->name,
+            'year' => $request->year,
+            'pages' => $request->pages
+        ]);
+        return redirect()
+            ->route('index')
+            ->with('success','Operazione compiuta! Il libro è stato aggiornato.');
+    }
+    public function destroy(Book $book)
+    {
+        //azione
+        $book->delete();
+        return redirect()
+            ->route('index')
+            ->with('success','Operazione compiuta! Il libro è stato eliminato.');
     }
 }
