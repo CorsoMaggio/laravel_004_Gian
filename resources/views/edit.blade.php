@@ -38,7 +38,7 @@
                 <input type="text" class="form-control" id="name" name="name"
                     value="{{ old('name', $book->name) }}" placeholder="Cambia il nome del libro">
                 @error('name')
-                    <div class="text-danger">{{ $message }}</div>
+                    {{ $message }}
                 @enderror
             </div>
             <div class="mb-3">
@@ -46,7 +46,7 @@
                 <input type="text" class="form-control" id="pages" name="pages"
                     value="{{ old('pages', $book->pages) }}" placeholder="Cambia il numero di pagine">
                 @error('pages')
-                    <div class="text-danger">{{ $message }}</div>
+                    {{ $message }}
                 @enderror
             </div>
             <div class="mb-3">
@@ -54,7 +54,7 @@
                 <input type="text" class="form-control" id="year" name="year"
                     value="{{ old('year', $book->year) }}" placeholder="Cambia l' anno di uscita">
                 @error('year')
-                    <div class="text-danger">{{ $message }}</div>
+                    {{ $message }}
                 @enderror
             </div>
             <div class="d-grid">

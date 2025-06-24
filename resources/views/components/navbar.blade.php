@@ -8,10 +8,16 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="/libri">List</a>
+                    <a class="nav-link " aria-current="page" href="/libri">Book's List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/libri/crea">Add</a>
+                    <a class="nav-link" href="/libri/crea">Add Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('autori.index') }}">Author's List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('autori.create') }}">Add Author</a>
                 </li>
             </ul>
             <form class="d-flex me-3" role="search">

@@ -56,6 +56,18 @@
                     {{ $message }}
                 @enderror
             </div>
+            <div class="mb-3">
+                <label for="authorSelect" class="form-label">Autore del libro</label>
+                <select class="form-control" id="authorSelect" name="author_id">
+                    <option value="">Seleziona un autore</option>
+                    @foreach ($authors as $author)
+                        <option value="{{ $author->id }}">{{ $author->firstname }} - {{ $author->lastname }}</option>
+                    @endforeach
+                </select>
+                @error('author_id')
+                    {{ $message }}
+                @enderror
+            </div>
             <div class="d-grid">
                 <button class="btn btn-primary btn-lg" type="submit" style="margin-top: 20px;">Salva</button>
             </div>

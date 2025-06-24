@@ -19,7 +19,6 @@
             .card {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
                 background-color: #80808090;
-                color: white;
                 margin-top: 20px;
             }
         </style>
@@ -30,12 +29,11 @@
             @guest
                 <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-lg-12 col-xl-11">
-                            <div class="card " style="border-radius: 25px;"
-                                style="background-color: #80808090,margin-botton: 20 px">
+                        <div class="col-md-4 mb-4">
+                            <div class="card " style="border-radius: 25px;" style="background-color: #80808090,">
                                 <div class="card-body">
                                     <p class="text-center">
-                                        Welcome in our homepage, where you can find all the books in our library.
+                                        Welcome in our homepage, <br> where you can find all the books in our library.
                                     </p>
                                     <div style="display: flex; justify-content: center; gap: 10px;">
                                         <a href="{{ route('login') }}" type="button" class="btn btn-primary">Accedi</a> |
@@ -48,40 +46,49 @@
                     </div>
                 </div>
                 <div class="container h-100">
-                    <div class="card" style="margin-top: 20 px">
-                        <div class="card-body">
-                            @foreach ($books as $book)
-                                <p class="card-text"><strong>Title:</strong> {{ $book->name }} </p>
-                                <p class="card-title"><strong>Price:</strong>
-                                    {{ $book->price ?? 'Indefined' }} </p>
-                                <a href="{{ route('detail', ['book' => $book]) }}" class="btn btn-primary">Dettagli</a>
-                                <hr>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            @else
-                <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-lg-12 col-xl-11">
-                            <div class="card" style="border-radius: 25px;" style="background-color: #80808090 ">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
                                 <div class="card-body">
-                                    <p class="text-center">
-                                        Welcome in our homepage, where you can find all the books in our
-                                        library and add
-                                        them.
-                                    </p>
-                                    <div style="display: flex; justify-content: center; gap: 50px;">
-                                        <a href="{{ route('create') }}" type="button" class="btn btn-primary">Add</a>
-                                        or
-                                        <a href="{{ route('index') }}" type="button" class="btn btn-primary">List</a>
-                                    </div>
+                                    @foreach ($books as $book)
+                                        <p class="card-text"><strong>Title:</strong> {{ $book->name }} </p>
+                                        <p class="card-text"><strong>Author:</strong> {{ $book->author->surname }} </p>
+                                        <p class="card-title"><strong>Price:</strong>
+                                            {{ $book->price ?? 'Indefined' }} </p>
+                                        <a href="{{ route('detail', ['book' => $book]) }}"
+                                            class="btn btn-primary">Dettagli</a>
+                                        <hr>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endguest
-        </div>
+            @else
+                <div class="container h-100 w-70">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-lg-12 col-xl-11">
+                            <div class="card" style="border-radius: 25px;" style="background-color: #80808090 ">
+                                <div class="card-body">
+                                    <p class="text-center">
+                                        Welcome in our homepage,<br>
+                                        you can find all the books in our
+                                        library and add
+                                        them.
+                                    </p>
+                                    <div style="display: flex; justify-content: center; gap: 50px;">
+
+                                        <a href="{{ route('index') }}" type="button" class="btn btn-primary">Book's
+                                            List</a> or
+                                        <a href="{{ route('autori.index') }}" type="button"
+                                            class="btn btn-primary">Author's
+                                            List</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endguest
+            </div>
     </section>
 </x-main>

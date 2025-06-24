@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Fortify;
@@ -21,4 +22,6 @@ Route::middleware(['auth'])->group(function () {
   Route::put('/libri/aggiorna/{book}',[BookController::class,'update'])->name('update');
   //Rotta di cancellazione
   Route::delete('/libri/elimina/{book}', [BookController::class,'destroy'])->name('destroy'); 
+
+  Route::resource('/autori', AuthorController::class);
 });
